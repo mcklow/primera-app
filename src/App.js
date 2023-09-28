@@ -17,9 +17,36 @@ function App() {
         >
           Learn React
         </a>
+        <Profile />
+        <MyButton />
       </header>
     </div>
   );
 }
-
+function MyButton(){
+  return(
+    <button>I'm a button</button>
+  )
+}
+const user = {
+  name: 'Angust McKlow',
+  imageUrl: 'https://1.bp.blogspot.com/-dLVNS4o47ek/XlpWOKlQuCI/AAAAAAABOC8/pC27SWgFUz09nbZxs1FTaeXMKIzvSIPTQCK4BGAYYCw/s125/mcklow_big.jpg',
+  imageSize: 90,
+};
+function Profile(){
+  return(
+    <>
+      <h1>{user.name}</h1>
+      <img 
+        className='avatar'
+        src={user.imageUrl}
+        alt={'Photo of ' + user.name}
+        stlye={{
+          width: user.imageSize,
+          height: user.imageSize
+        }} 
+      />
+    </>
+  )
+}
 export default App;
